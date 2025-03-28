@@ -1,12 +1,11 @@
-# Portfolio  🚀
+# Portfolio 🚀
 
-Welcome! 👋 I'm Roland, and this space is a collection of my programming journey. 
+Welcome! 👋 I'm Roland, and this space documents my programming journey.
 
-I'm currently learning embedded systems and data analysis.💻
+I'm currently exploring embedded systems and data analysis. 💻
 
-Expect to find projects, code snippets, and notes as I learn and explore and build things.
+Here, you'll find projects, code snippets, and learning notes as I progress.
 
-🗂️ Everything is organised in folders in this repo.
+🗂️ Folders organize everything in this repo.
 
-Learning is a lifelong process, and I'm excited to share my progress here. 
-Feel free to browse and connect! 😊
+Learning is a lifelong process, and I'm happy to share my progress. Feel free to browse and connect! 😊
