@@ -9,14 +9,14 @@ I just simulate work with a usleep() and collect some data from the threads.
 Data for each thread is collected in a struct, which in turn is monitored by a separate monitor thread.  
   
 With this "program" I'm able to run 1000 threads while monitoring shared resources.  
-By adding structs and a monitor thread the difficulty of the standard challenge increased with me not just having to account for deadlocks but also race conditions.
-The program initally sets a few parameters that easily can be changed.  
+By adding structs and a monitor thread the difficulty of the standard challenge increased with me not just having to account for deadlocks but also race conditions.  
 
+The program initally sets a few parameters that easily can be changed:
 ```c
  #define NUM_PHILOSOPHERS 1000 // Sets the number of threads you want to run
  #define ROUNDS 800            // Each thread runs for N rounds
- #define MONITOR_INTERVAL 40   // Set the interval for the monitor thread in microseconds
- #define TIME_UNTIL_DEAD 1000  // Set the time a thread is allowed to be starved in microseconds
+ #define MONITOR_INTERVAL 40   // Set the interval for the monitor thread (in microseconds)
+ #define TIME_UNTIL_DEAD 1000  // Set the time a thread is allowed to be starved in (microseconds)
  #define SIMULATE_WORK 1       // 1 or 0, If this is set to true, every thread will simulate work for a random amount of time.
 ```
 

@@ -1,12 +1,11 @@
 /*  ::::: BASIC PROBLEM ::::::
- *   n number of philosophers (thread)
- *   n number of forks (mutex)
+ *   N number of philosophers (thread)
+ *   N number of forks (mutex)
  *   every phil needs 2 forks to eat
  *         phil can take fork
  *         phil can put fork
- *         phil states: eat, think (wait), hungry, dead
  *
- *   rules:left or right phil cannot eat if current wants to eat
+ *   rules: left or right phil cannot eat if current wants to eat
  *   ::::::::::::::::::::::::::*/
 
 #include <pthread.h>
@@ -105,7 +104,6 @@ void *philosopher(void *arg) {
 int main() {
   struct timespec prog_start_time, prog_end_time;
   clock_gettime(CLOCK_MONOTONIC, &prog_start_time);
-  // pthread_mutex_t init_mutex = PTHREAD_MUTEX_INITIALIZER;
 
   // initializing mutexes
   for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
@@ -114,7 +112,7 @@ int main() {
   }
 
   // Creating the philosopher threads
-  for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
+  for (int i = 0; i <= NUM_PHILOSOPHERS; i++) {
     pthread_mutex_lock(&data_lock[i]);
     phil_data[i].phil_id = i;
     phil_data[i].rounds = 0;
@@ -177,7 +175,7 @@ int main() {
     deaths += phil_data[i].is_dead;
   }
   printf("\n::: Summarized stats :::");
-  printf("\nProgram run time: %d nanoseconds", prog_time_elapsed);
+  printf("\nProgram run time: %d microseconds", prog_time_elapsed);
   printf("\nAverage cycles: %d", (rounds / NUM_PHILOSOPHERS));
   printf("\nTotal deaths: %d\n\n", deaths);
 }
