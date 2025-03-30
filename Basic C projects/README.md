@@ -23,3 +23,25 @@ The program initally sets a few parameters that easily can be changed:
 ### Project takeaways
 With this project I got a initial understanding of multithreading, mutexes and deadlock.  
 Without having a particular interest in the subject I found it really interesting to get a hang of the basics.
+It was a fun challenge to get the program to work and I learned a lot about how threads work in C.
+I also learned a lot about how to use thread sanitizer to debug my code.
+
+
+### Possible improvements
+
+ - Add a command line argument to set the parameters
+ - Add the possibility to run multiple rounds with different parameters with summary of each round
+ - Split the code into multiple files
+ - Add a makefile
+
+### How to run
+Just run the following in a terminal:
+```bash
+clang -pthread dining_philosophers.c -o dining_philosophers
+./dining_philosophers
+```
+To run the program with thread sanitizer, use the following command:
+```bash
+clang -fsanitize=thread -pthread dining_philosophers.c -o dining_philosophers
+./dining_philosophers
+```
